@@ -10,13 +10,14 @@ import protect from '../middleware/authMiddleware.js';
 
 const router = express.Router();
 
-// Public (optional)
+// Public routes
 router.get('/', getAllQuizzes);
-router.get('/:topic', getQuizByTopic);
 
-// Protected
+// Protected routes - specific routes first
+router.post('/submit', protect, submitQuiz);
 router.post('/', protect, createQuiz);
 
-router.post('/submit',protect, submitQuiz);
+// Parameterized routes last
+router.get('/:topic', getQuizByTopic);
 
 export default router;
