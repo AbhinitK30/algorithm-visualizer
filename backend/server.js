@@ -21,7 +21,7 @@ const app = express();
 // CORS configuration for production
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://your-app.vercel.app', // Replace with your actual Vercel URL
+  'https://algorithm-visualizer-brown-two.vercel.app',
 ];
 
 app.use(cors({
